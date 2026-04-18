@@ -1,23 +1,26 @@
 # Projects
 
-## Raven
+## Raven — Repository Analysis & Vulnerability Engine
 - **Status**: In Progress
 - **Year**: 2026
-- **Stack**: [Fill in — e.g., Python, LangChain, MCP, etc.]
-- **Link**: Private repository
+- **Stack**: Python 3.14, Pydantic AI, Semgrep, Local LLMs (llama.cpp)
+- **Link**: Private (softrams-security org)
 - **Priority**: #1 — flagship project
 
 ### Description
-[This is your top project. Write 2-3 sentences about what Raven is, what problem it solves, and what makes it interesting. Since it's a private repo, focus on the concept and capabilities rather than implementation details. Some questions to consider:]
+An autonomous AI agent that investigates code for security vulnerabilities. RAVEN combines Git diff analysis, Semgrep static analysis, and local LLM reasoning to generate comprehensive security reports — entirely locally with no cloud services. It autonomously decides what to investigate, follows security leads across files, traces data flow, and produces structured findings with severity ratings and actionable recommendations. Features domain-aware routing for Terraform, Docker, and application code, plus a vulnerability triage agent that assesses CVE/GHSA exposure against your codebase with evidence-based verdicts and Jira-ready reports.
 
-- What does Raven do?
-- What problem does it solve?
-- What's the most impressive or novel aspect?
-- Is it an agent? A tool? A platform?
-- What domain does it operate in? (security, AI, both?)
+[Edit to taste. Key highlights you might want to emphasize:]
+- Runs 100% locally — privacy-first, no data leaves your machine
+- Autonomous agent architecture — it decides what to investigate, not a fixed pipeline
+- Domain-aware: adapts analysis for Terraform, Docker, and app code in the same PR
+- Vulnerability triage: feed it a CVE and it tells you if your codebase is affected, with evidence
+- Performance: 22-119s for typical PRs
+- 190+ tests, full type safety with Pydantic AI
+- LLM-as-judge verification for triage reports
 
 ### Terminal Summary
-[One-liner for the terminal `projects` command, e.g.: "Raven — autonomous security analysis agent"]
+Raven — autonomous local AI agent for security code review
 
 ---
 
@@ -29,13 +32,14 @@
 - **Live**: https://kston83.github.io/cvss-te/
 
 ### Description
-Improves vulnerability prioritization by enhancing CVSS scores with real-world exploit intelligence. Combines data from CISA KEV, EPSS, Metasploit, ExploitDB, Nuclei, and GitHub PoCs to create actionable severity ratings that reflect actual threat levels — not just theoretical impact. Includes an interactive threat intelligence dashboard and CVE lookup tool, all running client-side with no backend required.
+Improves vulnerability prioritization by enhancing CVSS scores with real-world exploit intelligence. Combines data from CISA KEV, EPSS, Metasploit, ExploitDB, Nuclei, and GitHub PoCs to create actionable severity ratings that reflect actual threat levels — not just theoretical impact. Includes a threat intelligence dashboard showing CISA KEV additions, emerging threats, and recently published vulns, plus a CVE lookup tool. All client-side, no backend, no tracking.
 
-[Edit to taste — you might want to emphasize specific aspects. Consider:]
-- The fact that it reduces noise by downgrading high-base-score CVEs with no real-world exploits
-- The dashboard showing CISA KEV, emerging threats, and recently published vulns
-- That it's a pure client-side app — privacy-focused, no tracking
-- Built on top of the original cvss-bt by t0sche
+[Edit to taste. Key highlights:]
+- Reduces noise: downgrading high-base-score CVEs with no real-world exploits
+- Elevates real threats: a CVSS 7.5 with weaponized exploits scores higher than a theoretical 9.1
+- Pure client-side — privacy-focused, all processing local
+- Supports CVSS 2.0, 3.0, 3.1, and 4.0
+- Built on the original cvss-bt by t0sche
 
 ### Terminal Summary
 CVSS-TE — threat-enhanced vulnerability scoring with live exploit intel
@@ -50,13 +54,13 @@ CVSS-TE — threat-enhanced vulnerability scoring with live exploit intel
 - **Category**: Developer Tooling / Template
 
 ### Description
-A production-ready Python project template demonstrating modern Python development practices. Features Python 3.14 with strict typing, uv for fast dependency management, comprehensive testing with pytest, and AI-assisted development support with structured Copilot instructions and modular rule files. Designed to be adaptable for web apps, CLI tools, libraries, or script collections.
+A production-ready Python project template optimized for AI-assisted development. Features Python 3.14 with strict typing, uv for fast dependency management, comprehensive TDD with pytest, and structured AI coding instructions (Copilot rules, modular rule files, example prompts). Adaptable for web apps, CLI tools, libraries, or script collections. This is the foundation that Raven and other projects are built on.
 
-[This one is more about demonstrating competence with modern tooling than being a "product." You might frame it as:]
+[Edit to taste. This one is about demonstrating tooling competence:]
 - Shows deep familiarity with modern Python ecosystem
-- Emphasis on AI-assisted development workflows
-- TDD-first approach with comprehensive examples
-- Or just keep it brief: "My opinionated Python starter for new projects"
+- AI-first dev workflow with comprehensive Copilot instructions
+- Same template used to build Raven
+- Or keep it brief: "My opinionated Python starter for new projects"
 
 ### Terminal Summary
 python-template — modern Python 3.14 starter with AI dev support
@@ -66,15 +70,15 @@ python-template — modern Python 3.14 starter with AI dev support
 ## CloudSec
 - **Status**: Archived
 - **Year**: [Fill in]
-- **Stack**: [Fill in — what languages/tools?]
-- **Link**: [Is this public? What's the URL?]
+- **Stack**: [Fill in — scripts are in the private softrams-security/cloud-sec repo]
+- **Link**: Private (softrams-security org)
 
 ### Description
-[Fill in — what was this project about? Cloud security tooling? Scripts? Research? Even if it's disorganized, describe the intent:]
-
+[Fill in — from the org repo description: "Repository to collect various scripts useful for security." Consider:]
 - What cloud security problems did it address?
-- What's in it? (scripts, configs, policies, research?)
-- Any specific cloud providers? (AWS, Azure, GCP?)
+- AWS SecurityHub? (you have sec_automation_reporting for that)
+- Any specific tools, scripts, or automations?
+- Is this worth including, or would Playwright-ZAP DAST better fill this slot?
 
 ### Terminal Summary
 cloudsec — [one-liner description]
@@ -89,9 +93,7 @@ cloudsec — [one-liner description]
 - **Stack**: Playwright, OWASP ZAP, HTML
 - **Link**: https://github.com/kston83/playwright-zap-dast
 
-Automated, repeatable vulnerability scanning for web applications using Playwright for authenticated browsing and OWASP ZAP for active and passive scanning.
-
-[Include this? It shows practical AppSec automation skills.]
+Automated, repeatable vulnerability scanning for web applications using Playwright for authenticated browsing and OWASP ZAP for active and passive scanning. Shows practical AppSec automation — the kind of tooling that makes security testing repeatable instead of ad hoc.
 
 ### Pentesting Notes & Scripts
 - **Status**: Ongoing
@@ -99,6 +101,14 @@ Automated, repeatable vulnerability scanning for web applications using Playwrig
 - **Stack**: Python
 - **Link**: https://github.com/kston83/pentesting
 
-Repository for pentesting notes and scripts.
+A living collection of offensive security tools and notes.
 
-[Include this? It's a working repo. Could frame it as "a living collection of offensive security tools and notes."]
+### VulnSentinel (org)
+- **Status**: Shipped
+- **Year**: 2026
+- **Stack**: [Fill in]
+- **Link**: Private (softrams-security org)
+
+Sentinel for security vulnerabilities exceeding age thresholds.
+
+[Include? Shows vulnerability management automation.]
