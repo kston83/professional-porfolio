@@ -4,3 +4,6 @@ dist/
 *.local
 .env
 .env.*
+
+# Draft content (personal, not committed)
+ai/content/
