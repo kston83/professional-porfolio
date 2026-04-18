@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Kris VS — Cybersecurity & AI</title>
+    <meta name="description" content="Professional portfolio — cybersecurity, AI/ML, and systems engineering." />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=IBM+Plex+Serif:ital,wght@0,400;0,500;0,600;1,400&family=IBM+Plex+Sans:wght@300;400;500;600&family=JetBrains+Mono:wght@400;500;700&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <!-- Terminal Hero -->
+    <section class="terminal-section" id="terminal">
+      <div class="terminal-header">
+        <div class="dots">
+          <div class="dot active"></div>
+          <div class="dot"></div>
+          <div class="dot"></div>
+        </div>
+        <div>session://portfolio — zsh — 120x36</div>
+        <div id="clock">--:--:--</div>
+      </div>
+      <div class="terminal-body">
+        <pre class="ascii-art" id="ascii"></pre>
+        <div class="ascii-tagline" id="tagline"></div>
+        <div class="terminal-output" id="output"></div>
+        <div class="prompt-line" id="prompt" style="display: none">
+          <span class="prompt-prefix">
+            <span class="path">~/portfolio</span>
+            <span class="arrow">&#10095;</span>
+          </span>
+          <input
+            type="text"
+            class="terminal-input"
+            id="input"
+            autocomplete="off"
+            spellcheck="false"
+            autocapitalize="off"
+          />
+          <span class="cursor" id="cursor"></span>
+        </div>
+      </div>
+      <div class="scroll-hint">scroll &#8595; or type `help`</div>
+    </section>
+
+    <div class="transition"></div>
+
+    <!-- Main Editorial Content -->
+    <main>
+      <section class="section" id="about">
+        <div class="section-label">01 — About</div>
+        <h2 class="section-title">
+          Building at the <em>intersection</em> of security and intelligent
+          systems.
+        </h2>
+        <div class="about-grid">
+          <p class="about-lede">
+            [Placeholder lede — 2-3 sentences. Who you are, what you care about,
+            what you build.]
+          </p>
+          <div class="about-details">
+            <p>[Placeholder paragraph — your background.]</p>
+            <p>[Placeholder paragraph — what you're focused on now.]</p>
+            <div class="stats">
+              <div class="stat">
+                <span class="stat-num">X+</span>
+                <span class="stat-label">Years in security</span>
+              </div>
+              <div class="stat">
+                <span class="stat-num">XX</span>
+                <span class="stat-label">Projects shipped</span>
+              </div>
+              <div class="stat">
+                <span class="stat-num">XX</span>
+                <span class="stat-label">Certifications</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="section" id="experience">
+        <div class="section-label">02 — Experience</div>
+        <h2 class="section-title">
+          A <em>decade</em> of defending, breaking, and building.
+        </h2>
+        <div class="experience-list" id="experience-list">
+          <!-- Populated by JS from data -->
+        </div>
+      </section>
+
+      <section class="section" id="projects">
+        <div class="section-label">03 — Selected Work</div>
+        <h2 class="section-title">Projects & <em>research</em>.</h2>
+        <div class="projects-grid" id="projects-grid">
+          <!-- Populated by JS from data -->
+        </div>
+      </section>
+
+      <section class="contact-section" id="contact">
+        <div class="contact-inner">
+          <div class="section-label">04 — Contact</div>
+          <h2 class="section-title">
+            Let's build something <em>worth breaking</em>.
+          </h2>
+          <p
+            style="
+              max-width: 50ch;
+              color: #c4e4a8;
+              font-size: 1.1rem;
+              margin-bottom: 1rem;
+            "
+          >
+            [Placeholder — one line about what you're open to.]
+          </p>
+          <div class="contact-links">
+            <a href="mailto:you@example.com" class="contact-link">→ email</a>
+            <a
+              href="https://github.com/"
+              class="contact-link"
+              target="_blank"
+              rel="noopener"
+              >→ github</a
+            >
+            <a
+              href="https://linkedin.com/"
+              class="contact-link"
+              target="_blank"
+              rel="noopener"
+              >→ linkedin</a
+            >
+          </div>
+          <footer>
+            <div>&copy; 2026 [Your Name] — built with care</div>
+          </footer>
+        </div>
+      </section>
+    </main>
+
+    <script type="module" src="/src/main.ts"></script>
+  </body>
+</html>
