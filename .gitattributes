@@ -1,0 +1,4 @@
+# Shell scripts must keep LF endings even when checked out on Windows —
+# a CRLF shebang line makes bash fail with a confusing "bad interpreter"
+# error, which would silently disable the git hooks in .claude/hooks/.
+*.sh text eol=lf
