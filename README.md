@@ -1,36 +1,30 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Personal site
 
-## Getting Started
+Blog + portfolio. Next.js 16 App Router + TypeScript + Tailwind v4 + shadcn/ui.
+Design system ported from a fantasy-football league dashboard built earlier
+this year — see `AGENTS.md` for the shell/design conventions it carries.
 
-First, run the development server:
+## Commands
 
 ```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+npm run dev      # next dev
+npm run build    # next build — also the only full typecheck of app code
+npm run lint     # eslint (flat config, eslint-config-next core-web-vitals + typescript)
+npm test         # vitest run
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Verification is `npm run build` + `npm run lint` + `npm test`, same as CI.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+## Content
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+Posts are MDX files with frontmatter under `content/writing/*.mdx`, read via
+`lib/writing.ts`. Add a post, add its frontmatter, it shows up in `/writing`
+automatically — no route or index file to touch.
 
-## Learn More
+## Workflow
 
-To learn more about Next.js, take a look at the following resources:
-
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+`main` is protected — branch first, open a PR, merge from there. A
+`PreToolUse` hook (`.claude/hooks/block-main-writes.sh`) blocks commits and
+pushes to `main` locally; `ALLOW_MAIN_WRITE=1` overrides it if you genuinely
+need to. CI (`.github/workflows/ci.yml`) runs lint, test, and build on every
+PR and push to `main`.

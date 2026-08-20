@@ -1,0 +1,50 @@
+name: CI
+
+on:
+  pull_request:
+    branches: [main]
+  push:
+    branches: [main]
+
+permissions:
+  contents: read
+
+concurrency:
+  group: ci-${{ github.workflow }}-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  build-lint-test:
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    steps:
+      - name: Check out repository
+        uses: actions/checkout@v5
+
+      - name: Set up Node.js
+        uses: actions/setup-node@v5
+        with:
+          node-version-file: ".nvmrc"
+          cache: npm
+
+      - name: Install dependencies
+        run: npm ci
+
+      # Cheapest first, but every step runs even after an earlier one fails
+      # (if: always()) so a single run reports the complete list of what's
+      # broken rather than stopping at the first failure. The job's overall
+      # conclusion is still a failure if any step failed.
+      - name: Lint
+        if: always()
+        run: npm run lint
+
+      - name: Test
+        if: always()
+        run: npm test
+
+      # Also the only full typecheck of app code — not a separate
+      # `tsc --noEmit` step: next-env.d.ts depends on gitignored,
+      # build-generated route types that don't exist on a cold checkout.
+      - name: Build
+        if: always()
+        run: npm run build
