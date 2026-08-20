@@ -155,7 +155,9 @@
     @apply font-sans;
   }
   .font-display {
-    font-variation-settings: "WONK" 0, "SOFT" 30;
+    font-variation-settings:
+      "WONK" 0,
+      "SOFT" 30;
   }
 }
 

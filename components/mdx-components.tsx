@@ -26,10 +26,16 @@ export const mdxComponents: MDXComponents = {
     />
   ),
   ul: (props) => (
-    <ul className="ml-5 flex list-disc flex-col gap-y-2 text-body text-ink" {...props} />
+    <ul
+      className="ml-5 flex list-disc flex-col gap-y-2 text-body text-ink"
+      {...props}
+    />
   ),
   ol: (props) => (
-    <ol className="ml-5 flex list-decimal flex-col gap-y-2 text-body text-ink" {...props} />
+    <ol
+      className="ml-5 flex list-decimal flex-col gap-y-2 text-body text-ink"
+      {...props}
+    />
   ),
   li: (props) => <li className="pl-1" {...props} />,
   blockquote: (props) => (
@@ -39,7 +45,10 @@ export const mdxComponents: MDXComponents = {
     />
   ),
   code: (props) => (
-    <code className="rounded-sm bg-plate px-1 py-0.5 font-mono text-chrome text-ink" {...props} />
+    <code
+      className="rounded-sm bg-plate px-1 py-0.5 font-mono text-chrome text-ink"
+      {...props}
+    />
   ),
   pre: (props) => (
     <pre

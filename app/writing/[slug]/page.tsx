@@ -31,7 +31,9 @@ export default async function WritingPostPage({
         <h1 className="mt-2 font-display text-display-sm leading-none text-ink sm:text-display-md">
           {post.frontmatter.title}
         </h1>
-        <p className="mt-4 text-body text-muted-ink">{post.frontmatter.description}</p>
+        <p className="mt-4 text-body text-muted-ink">
+          {post.frontmatter.description}
+        </p>
       </div>
 
       <div className="flex flex-col gap-y-4">
